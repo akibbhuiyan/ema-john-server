@@ -25,6 +25,9 @@ async function run() {
         res.send(result.acknowledged);
       });
     });
+    app.get("/", (req, res) => {
+      res.send("This is the server of Ema john Site");
+    });
     app.get("/products", (req, res) => {
       productsCollection.find({}).toArray((err, document) => {
         res.send(document);
